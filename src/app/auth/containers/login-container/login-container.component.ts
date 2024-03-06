@@ -12,6 +12,7 @@ export class LoginContainerComponent {
 
   handleLogin(event: any) {
     console.log('LoginContainerComponent.onLogin', event);
+    localStorage.setItem('isLoggedIn', 'true');
   }
 }
 
