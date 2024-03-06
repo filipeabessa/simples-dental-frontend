@@ -1,4 +1,4 @@
-<mat-card class="card-container" [ngStyle]="ngStyles">
+<mat-card class="card-container">
   <mat-card-header>
     <mat-card-title>
       {{ title }}
@@ -7,7 +7,7 @@
   <mat-card-content>
     <ng-content></ng-content>
   </mat-card-content>
-  <mat-card-actions>
+  <mat-card-actions *ngIf="actionButtons.length > 0">
       <ng-container class=".card-buttons-container" *ngFor="let button of actionButtons">
         <app-button mat-button (click)="button.action()">{{ button.label }}</app-button>
       </ng-container>

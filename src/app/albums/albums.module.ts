@@ -4,12 +4,14 @@ import { ListAlbumsContainerComponent } from './containers/list-albums-container
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from '../shared/shared.module';
 import { MatCardModule } from '@angular/material/card';
+import { AlbumDetailsContainerComponent } from './containers/album-details-container/album-details-container.component';
 
 
 
 @NgModule({
   declarations: [
-    ListAlbumsContainerComponent
+    ListAlbumsContainerComponent,
+    AlbumDetailsContainerComponent,
   ],
   imports: [
     CommonModule,
@@ -18,7 +20,8 @@ import { MatCardModule } from '@angular/material/card';
     SharedModule
   ],
   exports: [
-    ListAlbumsContainerComponent
+    ListAlbumsContainerComponent,
+    AlbumDetailsContainerComponent
   ]
 })
 export class AlbumsModule { }

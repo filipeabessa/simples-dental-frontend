@@ -3,15 +3,35 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 500px;
-  height: 500px;
+  width: var(--card-width);
+  height: var(--card-height);
+  background: var(--card-background-color, white) !important;
   padding: 20px;
+
+  mat-card-header {
+    height: 100px;
+
+    mat-card-title {
+      font-size: 1em;
+      font-weight: bold;
+      text-align: center;
+    }
+
+  }
+
+  mat-card-content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
   .card-buttons-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    color: blue;
   }
 }

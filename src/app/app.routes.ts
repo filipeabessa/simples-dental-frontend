@@ -3,6 +3,7 @@ import { LoginContainerComponent } from './auth/containers/login-container/login
 import { NgModule } from '@angular/core';
 import { AuthModule } from './auth/auth.module';
 import { ListAlbumsContainerComponent } from './albums/containers/list-albums-container/list-albums-container.component';
+import { AlbumDetailsContainerComponent } from './albums/containers/album-details-container/album-details-container.component';
 import { AlbumsModule } from './albums/albums.module';
 
 export const routes: Routes = [
@@ -12,6 +13,15 @@ export const routes: Routes = [
   {
     path: 'albums',
     component: ListAlbumsContainerComponent,
+  },
+  {
+    path: 'albums/:id',
+    component: AlbumDetailsContainerComponent,
+  },
+  {
+    path: '',
+    redirectTo: 'auth/login',
+    pathMatch: 'full'
   }
 ];
 

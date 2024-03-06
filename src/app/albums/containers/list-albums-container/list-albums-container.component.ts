@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Album } from '../../types';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-albums-container',
@@ -9,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./list-albums-container.component.scss'] // Corrected here
 })
 export class ListAlbumsContainerComponent implements OnInit {
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private router: Router) { }
 
   title: string = 'List Albums';
   albums: Album[] = [];
@@ -24,7 +25,6 @@ export class ListAlbumsContainerComponent implements OnInit {
         this.handleGetAlbumsFirstPicture(album.id);
       });
     }
-
   }
 
   handleGetAlbums() {
@@ -41,7 +41,7 @@ export class ListAlbumsContainerComponent implements OnInit {
       });
   }
 
-  handleAlbumSelected(event: any) {
-    console.log('ListAlbumsContainerComponent.onAlbumSelected', event);
+  handleAlbumSelected(albumId: number) {
+    this.router.navigate([`/albums/${albumId}`]);
   }
 }

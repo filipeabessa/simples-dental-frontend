@@ -1,0 +1,8 @@
+<div class="photos-container">
+  <h1 class="mat-headline-1" >Album</h1>
+  <div *ngIf="photos.length > 0" class="photos-wrapper">
+    <app-card *ngFor="let photo of photos" [title]="photo.title">
+      <img [src]="photo.url" alt="album.title" />
+    </app-card>
+  </div>
+</div>
