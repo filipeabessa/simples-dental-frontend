@@ -6,18 +6,12 @@ import { Component } from '@angular/core';
   styleUrl: './login-container.component.scss'
 })
 export class LoginContainerComponent {
-  actionButtons: Button[] = [
-    { label: 'Login', action: this.onLogin },
-  ];
+  title: string = 'Login';
 
   constructor() { }
 
-  onLogin() {
-    console.log('Login');
+  handleLogin(event: any) {
+    console.log('LoginContainerComponent.onLogin', event);
   }
 }
 
-type Button = {
-  label: string;
-  action: () => void;
-}

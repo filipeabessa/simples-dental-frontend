@@ -1,8 +1,9 @@
 <div class="container">
   <app-card
-    [title]="'title'"
-    [actionButtons]="actionButtons"
+    [title]="title"
   >
+    <login-form (loginSubmitted)="handleLogin($event)"
+    ></login-form>
   </app-card>
 </div>
 
