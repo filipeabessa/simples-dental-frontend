@@ -1,0 +1,15 @@
+<mat-card class="card-container">
+  <mat-card-header>
+    <mat-card-title>
+      {{ title }}
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <ng-content></ng-content>
+  </mat-card-content>
+  <mat-card-actions>
+      <ng-container class=".card-buttons-container" *ngFor="let button of actionButtons">
+        <app-button mat-button (click)="button.action()">{{ button.label }}</app-button>
+      </ng-container>
+  </mat-card-actions>
+</mat-card>
