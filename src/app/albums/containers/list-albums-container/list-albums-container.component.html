@@ -1,0 +1,5 @@
+<div class="albums-container">
+  <app-card  *ngFor="let album of albums" [title]="album.title">
+    <img [src]="album.thumbnailUrl" alt="album.title" />
+  </app-card>
+</div>

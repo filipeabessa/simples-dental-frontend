@@ -1,9 +1,8 @@
 .container {
-  background: #ebf1f1;
-  width: 100vw;
-  min-height: 100vh;
+  background: red;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 20px;
 }

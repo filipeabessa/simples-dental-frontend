@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-container',
@@ -8,11 +9,12 @@ import { Component } from '@angular/core';
 export class LoginContainerComponent {
   title: string = 'Login';
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   handleLogin(event: any) {
     console.log('LoginContainerComponent.onLogin', event);
     localStorage.setItem('isLoggedIn', 'true');
+    this.router.navigate(['/albums']);
   }
 }
 
