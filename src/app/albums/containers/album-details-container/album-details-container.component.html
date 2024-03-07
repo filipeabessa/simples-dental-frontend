@@ -5,4 +5,5 @@
       <img [src]="photo.url" alt="album.title" />
     </app-card>
   </div>
+  <app-spinner *ngIf="photos.length === 0"></app-spinner>
 </div>

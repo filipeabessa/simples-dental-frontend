@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AlbumService } from '../../service/album.service';
+import { Photo } from '../../types';
 
 @Component({
   selector: 'app-album-details-container',
@@ -8,18 +9,18 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './album-details-container.component.scss'
 })
 export class AlbumDetailsContainerComponent implements OnInit {
-  constructor(private activatedRoute: ActivatedRoute, private httpClient: HttpClient) { }
+  constructor(private activatedRoute: ActivatedRoute, private albumService: AlbumService) { }
 
   photos: Photo[] = [];
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
-      this.handleGetAlbum(params['id']);
+      this.handleGetPhotosByAlbumId(params['id']);
     });
   }
 
-  handleGetAlbum(id: number) {
-    this.httpClient.get<Photo[]>(`https://jsonplaceholder.typicode.com/albums/${id}/photos?_limit=10`)
+  handleGetPhotosByAlbumId(id: number) {
+    this.albumService.getPhotosByAlbumId(id)
       .subscribe(photos => {
         this.photos = photos;
         console.log('AlbumDetailsContainerComponent.handleGetAlbum', photos);
@@ -27,11 +28,3 @@ export class AlbumDetailsContainerComponent implements OnInit {
   }
 
 }
-
-type Photo = {
-  id: number;
-  albumId: number;
-  title: string;
-  url: string;
-  thumbnailUrl: string;
-};
