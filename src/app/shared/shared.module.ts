@@ -7,13 +7,16 @@ import { ButtonComponent } from './components/button/button.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { ToolBarComponent } from './components/tool-bar/tool-bar.component';
 
 
 @NgModule({
   declarations: [
     CardComponent,
     ButtonComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    ToolBarComponent
   ],
   imports: [
     CommonModule,
@@ -21,12 +24,14 @@ import { MatIconModule } from '@angular/material/icon';
     MatButtonModule,
     MatProgressSpinnerModule,
     MatIconModule,
+    MatToolbarModule,
   ],
   exports: [
     CardComponent,
     ButtonComponent,
     SpinnerComponent,
     MatIconModule,
+    ToolBarComponent
   ]
 })
 export class SharedModule { }

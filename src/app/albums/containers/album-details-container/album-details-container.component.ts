@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AlbumService } from '../../service/album.service';
 import { Photo } from '../../models';
 
@@ -9,11 +9,18 @@ import { Photo } from '../../models';
   styleUrl: './album-details-container.component.scss'
 })
 export class AlbumDetailsContainerComponent implements OnInit {
-  constructor(private activatedRoute: ActivatedRoute, private albumService: AlbumService) { }
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private albumService: AlbumService,
+    private router: Router
+  ) { }
   title: string = 'Fotos do Album'
   photos: Photo[] = [];
 
   ngOnInit(): void {
+    if (!localStorage.getItem('isLoggedIn')) {
+      this.router.navigate(['auth/login']);
+    }
     this.activatedRoute.params.subscribe(params => {
       this.handleGetPhotosByAlbumId(params['id']);
     });

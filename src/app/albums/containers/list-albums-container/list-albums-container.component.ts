@@ -21,6 +21,9 @@ export class ListAlbumsContainerComponent implements OnInit {
   }];
 
   ngOnInit() {
+    if (!localStorage.getItem('isLoggedIn')) {
+      this.router.navigate(['auth/login']);
+    }
     this.handleGetAlbums()
   }
 
