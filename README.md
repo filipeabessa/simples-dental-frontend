@@ -27,6 +27,6 @@ Para executar a aplicação, basta executar os seguintes comandos:
 ```
 
 ## Páginas
-- **auth/login**: Página de login.
+- **/auth/login**: Página de login.
 - **/albums**: Página que lista os álbuns do usuário logado.
 - **/albums/:id:** Página que lista as fotos de um álbum.
