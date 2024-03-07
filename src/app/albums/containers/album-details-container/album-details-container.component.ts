@@ -10,7 +10,7 @@ import { Photo } from '../../models';
 })
 export class AlbumDetailsContainerComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private albumService: AlbumService) { }
-
+  title: string = 'Fotos do Album'
   photos: Photo[] = [];
 
   ngOnInit(): void {
@@ -23,7 +23,6 @@ export class AlbumDetailsContainerComponent implements OnInit {
     this.albumService.getPhotosByAlbumId(id)
       .subscribe(photos => {
         this.photos = photos;
-        console.log('AlbumDetailsContainerComponent.handleGetAlbum', photos);
       });
   }
 

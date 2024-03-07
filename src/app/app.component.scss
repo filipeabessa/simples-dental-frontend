@@ -1,18 +1,17 @@
-body {
+html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
-  width: 100vw !important;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: #f7dede;
-  color: #333;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 
   .container {
-    background: #f7dede;
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
+    height: calc(100% - 60px);
+    background: var(--background-color);
     flex-direction: column;
     justify-content: center;
     align-items: center;

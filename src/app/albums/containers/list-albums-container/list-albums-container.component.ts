@@ -12,25 +12,21 @@ import { AlbumService } from '../../service/album.service';
 export class ListAlbumsContainerComponent implements OnInit {
   constructor(private albumService: AlbumService, private router: Router) { }
 
-  title: string = 'List Albums';
+  title: string = 'Lista de Albums';
   albums: Album[] = [];
 
-
-
   ngOnInit() {
-    this.handleGetAlbums();
-
-    if (this.albums.length > 0) {
-      this.albums.forEach(album => {
-        this.handleGetAlbumsFirstPicture(album.id);
-      });
-    }
+    this.handleGetAlbums()
   }
 
   handleGetAlbums() {
     this.albumService.getAlbums(10)
       .subscribe(albums => {
         this.albums = albums;
+      }).add(() => {
+        this.albums.forEach(album => {
+          this.handleGetAlbumsFirstPicture(album.id);
+        })
       });
   }
 
@@ -38,11 +34,10 @@ export class ListAlbumsContainerComponent implements OnInit {
     this.albumService.getPhotosByAlbumId(id, 1)
       .subscribe(photos => {
         this.albums[id - 1].thumbnailUrl = photos[0].thumbnailUrl;
-        console.log(this.albums);
       });
   }
 
-  handleAlbumSelected(albumId: number) {
-    this.router.navigate([`/albums/${albumId}`]);
+  handleAlbumSelected(album: Album) {
+    this.router.navigate([`/albums/${album.id}`]);
   }
 }

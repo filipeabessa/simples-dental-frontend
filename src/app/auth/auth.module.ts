@@ -5,6 +5,7 @@ import { LoginContainerComponent } from './containers/login-container/login-cont
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginFormComponent } from './forms/login-form/login-form.component';
 import { MatInputModule, MatFormField } from '@angular/material/input';
+import { CoreModule } from '../core/core.module';
 
 
 
@@ -15,6 +16,7 @@ import { MatInputModule, MatFormField } from '@angular/material/input';
   ],
   imports: [
     CommonModule,
+    CoreModule,
     SharedModule,
     ReactiveFormsModule,
     FormsModule,
