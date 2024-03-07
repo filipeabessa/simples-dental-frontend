@@ -1,4 +1,5 @@
 import { Component, EventEmitter, HostListener, Input, Output, ViewEncapsulation } from '@angular/core';
+import { Button } from '../button/types';
 
 @Component({
   selector: 'app-card',
@@ -16,8 +17,4 @@ export class CardComponent {
     event.stopPropagation(); // Prevents the event from bubbling up the DOM tree
     this.click.emit();
   }
-}
-interface Button {
-  label: string;
-  action: () => void;
 }

@@ -1,8 +1,13 @@
 <div class="albums-container">
   <h1 class="mat-headline-1" >{{title}}</h1>
   <div class="albums-wrapper" *ngIf="albums.length > 0">
-    <app-card (click)="handleAlbumSelected(album)"  *ngFor="let album of albums" [title]="album.title">
-      <img *ngIf="album.thumbnailUrl" [src]="album.thumbnailUrl" alt="album.title" />
+    <app-card
+      (click)="handleAlbumSelected(album)"
+      *ngFor="let album of albums"
+      [title]="album.title"
+    >
+        <img  [src]="album.thumbnailUrl" alt="album.title" />
+        <app-button (click)="handleAlbumSelected(album)">Visualizar Album</app-button>
       <app-spinner *ngIf="!album.thumbnailUrl"></app-spinner>
     </app-card>
   </div>

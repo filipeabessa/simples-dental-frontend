@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Album } from '../../models';
 import { Router } from '@angular/router';
 import { AlbumService } from '../../service/album.service';
+import { Button } from '../../../shared/components/button/types';
 
 @Component({
   selector: 'app-list-albums-container',
@@ -14,6 +15,10 @@ export class ListAlbumsContainerComponent implements OnInit {
 
   title: string = 'Lista de Albums';
   albums: Album[] = [];
+  actionButtons: Button[] = [{
+    label: 'Ver Album',
+    action: (album: Album) => this.handleAlbumSelected(album)
+  }];
 
   ngOnInit() {
     this.handleGetAlbums()
