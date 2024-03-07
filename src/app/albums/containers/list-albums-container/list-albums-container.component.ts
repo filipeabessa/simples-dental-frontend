@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { Album } from '../../types';
+import { Album } from '../../models';
 import { Router } from '@angular/router';
 import { AlbumService } from '../../service/album.service';
 

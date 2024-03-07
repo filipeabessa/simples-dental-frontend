@@ -10,8 +10,8 @@ describe('ListAlbumsContainerComponent', () => {
     await TestBed.configureTestingModule({
       imports: [ListAlbumsContainerComponent]
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(ListAlbumsContainerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

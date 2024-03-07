@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Album, Photo } from '../types';
+import { Album, Photo } from '../models';
 import { Observable } from 'rxjs';
 import { ALBUMS_ENDPOINT, BASE_URL, PHOTOS_ENDPOINT } from './constants';
 
