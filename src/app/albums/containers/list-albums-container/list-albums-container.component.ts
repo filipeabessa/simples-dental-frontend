@@ -37,7 +37,8 @@ export class ListAlbumsContainerComponent implements OnInit {
   handleGetAlbumsFirstPicture(id: number) {
     this.httpClient.get<Album[]>(`https://jsonplaceholder.typicode.com/photos?albumId=${id}&_limit=1`)
       .subscribe(photos => {
-        this.albums[id].thumbnailUrl = photos[0].thumbnailUrl;
+        this.albums[id - 1].thumbnailUrl = photos[0].thumbnailUrl;
+        console.log(this.albums);
       });
   }
 
